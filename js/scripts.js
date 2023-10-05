@@ -1,6 +1,15 @@
 let pokemonList = [
     { name: "Charmander", height: .6, type: ["fire"] },
-    { name: "Squirtle", height: .5, type: ["water"] },
-    { name: "Pikachu", height: .4, type: ["electric"] }
+    { name: "Squirtle", height: .5, type: ["water", "shell"] },
+    { name: "Pikachu", height: .4, type: ["electric", "speed"] }
 ];
-document.write(pokemonList); ß
+for (let i = 0; i < pokemonList.length; i++) {
+    if (pokemonList[i].height > .5) {
+        document.write(pokemonList[i].name + "  " + "(height:" + "  " + pokemonList[i].height + " ) " + "- Wow, that\'s big!" + "<br>");
+    }
+    else {
+        document.write(pokemonList[i].name + "  " + "(height:" + "  " + pokemonList[i].height + " ) " + "<br>");
+    }
+}
+
+
