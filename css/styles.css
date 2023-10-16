@@ -1,0 +1,45 @@
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.button-class {
+    background-color: skyblue;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    --webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: skyblue;
+    color: purple;
+    border: 4px solid black;
+}
+
+.button {
+    border: 2px blue solid;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.selected {
+    border: 5px red solid;
+}
+
+.additional-information {
+    display: none;
+}
+
+.additional-information.is-visible {
+    display: block;
+}
