@@ -1,25 +1,14 @@
 let pokemonRepository = (function () {
+    // 1.7 load list add
+    let pokemonList = [];
+    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
-    let pokemonList = [
-        { name: "Charmander", height: 0.6, type: ["fire"], },
-        { name: "Squirtle", height: 0.5, type: ["water", " shell"], },
-        { name: "Pikachu", height: 0.4, type: ["electric", " speed"], },
-    ];
-
-
-
-    // IIFE wrapped around existing code: see 1st line and below
-
-    function getAll() {
-        return pokemonList;
-    }
-
+    // Other functions remain here
     function add(pokemon) {
         if (
             typeof pokemon === "object" &&
-            "name" in pokemon &&
-            "height" in pokemon &&
-            "types" in pokemon
+            "name" in pokemon //&&
+            //  "detailsURL" in pokemon
         ) {
             pokemonList.push(pokemon);
         } else {
@@ -27,6 +16,11 @@ let pokemonRepository = (function () {
         }
     }
 
+    // IIFE wrapped around existing code: see 1st line and below
+
+    function getAll() {
+        return pokemonList;
+    }
 
     // 1.6 add function
     function addListItem(pokemon) {
@@ -49,25 +43,61 @@ let pokemonRepository = (function () {
 
     }
 
-    function showDetails(pokemon) {
-        console.log(pokemon)
+    function loadList() {
+        return fetch(apiUrl).then(function (response) {
+            return response.json();
+        }).then(function (json) {
+            json.results.forEach(function (item) {
+                let pokemon = {
+                    name: item.name,
+                    detailsUrl: item.url
+                };
+                add(pokemon);
+                console.log(pokemon);
+            });
+        }).catch(function (e) {
+            console.error(e);
+        })
+    }
+
+    // 1.7 load details with promise function
+    function loadDetails(item) {
+        let url = item.detailsUrl;
+        return fetch(url).then(function (response) {
+            return response.json();
+        }).then(function (details) {
+            // Now we add the details to the item
+            item.imageUrl = details.sprites.front_default;
+            item.height = details.height;
+            item.types = details.types;
+        }).catch(function (e) {
+            console.error(e);
+        });
+    }
+
+    function showDetails(item) {
+        pokemonRepository.loadDetails(item).then(function () {
+            console.log(item);
+        });
     }
 
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
-        showDetails: showDetails,
+        loadList: loadList, // 1.7 loadList & loadDetails
+        loadDetails: loadDetails,
+        showDetails: showDetails
     };
 })();
 
-pokemonRepository.add({ name: "Charmander", height: 0.6, types: ["fire"] });
 
-console.log(pokemonRepository.getAll());
-
-pokemonRepository.getAll().forEach(function (pokemon) {
-    pokemonRepository.addListItem(pokemon);
-});
+pokemonRepository.loadList().then(function () {
+    // Now the data is loaded! 1.7
+    pokemonRepository.getAll().forEach(function (pokemon) {
+        pokemonRepository.addListItem(pokemon);
+    });
+})
 
 // my notes for me
 
