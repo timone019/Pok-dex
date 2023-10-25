@@ -158,13 +158,22 @@ let pokemonRepository = (function () {
     };
 })();
 
-
 pokemonRepository.loadList().then(function () {
     // Now the data is loaded! 1.7
     pokemonRepository.getAll().forEach(function (pokemon) {
         pokemonRepository.addListItem(pokemon);
     });
 })
+
+// 1.9 jquery add
+
+$('input').each(function (i) {
+    let inputValue = $(this).val();
+    let inputName = $(this).attr('name');
+    if (inputValue().length < 1) {
+        console.log('Please fill out the ' + inputName + ' field')
+    }
+});
 
 // my notes for me
 
