@@ -6,7 +6,7 @@ let pokemonRepository = (function () {
         if (
             typeof pokemon === 'object') {
             //"detailsURL" in pokemon
-            pokemonList.push(pokemon);
+            pokemonList.push(pokemon); //can sort alphabetically here
         }
     }
 
@@ -45,11 +45,19 @@ let pokemonRepository = (function () {
 
             })
             .then(function (json) {
+                // Sort the array alphabetically by name
+                json.results.sort(function (a, b) {
+                    return a.name.localeCompare(b.name);
+                });
+
+                // Iterate through the sorted list
+                // console.log("api"json.results) testing out how to sort alphabetically
                 json.results.forEach(function (item) {
                     let pokemon = {
                         name: item.name,
                         detailsUrl: item.url
                     };
+
                     add(pokemon);
                 });
             }).catch(function (e) {
