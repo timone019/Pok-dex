@@ -4,24 +4,76 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device=width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>My Pokedex</title>
 </head>
 
 <body>
 
-    <header>
-        <h1>Pokedex</h1>
-    </header>
 
-    <ul class="pokemon-list" id="list">
-        <!-- <li>the value of the (inputValue) from the input element</li> -->
-    </ul>
-    <ul class="pokemon-list-group"></ul>
+    <!-- NavBar-->
+    <nav class="navbar fixed-top navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Pokedex</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div id="modal-container"></div>
 
-    <form id="survey_form">
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+    </button> -->
+
+    <!-- <ul class="pokemon-list" id="list"> -->
+    <!-- <li>the value of the (inputValue) from the input element</li> -->
+    <!-- </ul> -->
+    <!-- <ul class="pokemon-list-group"></ul> pre bootstrap-->
+    <!-- <ul class="list-group"></ul> post bootstrap -->
+
+    <div class="container">
+        <h1 class="display-3"></h1>
+        <ul class="list-group unstyled"></ul>
+        <!-- Modal -->
+        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <form id="survey_form">
         <label for="question_1">What is your favorite pokemon?</label>
         <input id="question_1" type="text">
 
@@ -29,14 +81,21 @@
     </form>
 
     <a href="#" class="show-more">Show more</a>
-    <div class="additional-information">More information goes in here.</div>
+    <div class="additional-information">More information goes in here.</div> -->
 
-    <strong>
-        <script src="js/promise-polyfill.js"></script>
-        <script src="js/fetch-polyfill.js"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    </strong>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="js/promise-polyfill.js"></script>
+    <script src="js/fetch-polyfill.js"></script>
+    <script src="js/scripts.js"></script>
+
 </body>
 
 </html>
