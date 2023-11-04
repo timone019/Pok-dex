@@ -1,1 +1,200 @@
-h1{color:#fff;font-size:30px;font-weight:700}#modal-container{display:none}#modal-container.is-visible{position:fixed;padding:20px;box-sizing:border-box;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:999;overflow:auto;display:grid;text-align:center}.button-class{padding:16px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;border-radius:3px;min-width:200px;transition-duration:.4s;cursor:pointer;background-color:#87ceeb;color:purple;border:4px solid #000;transition-timing-function:ease-in-out}.button-class:focus,.button-class:hover{cursor:pointer;transform:scale(1.1)}body{background-color:salmon;text-align:center;font-weight:400;line-height:1.6;min-height:100vh;margin-top:65px;margin-bottom:80px;font-family:Arial,Helvetica,sans-serif}
+h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#modal-container {
+    display: none;
+}
+
+#modal-container.is-visible {
+    position: fixed;
+    padding: 20px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    /* to show it above other content  */
+    z-index: 999;
+
+    /* to allow scrolling if the screen is not high enough*/
+    overflow: auto;
+
+    /* this is used to center the modal */
+    display: grid;
+    text-align: center;
+}
+
+/* .modal {
+    margin: auto;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 15px;
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+} */
+
+/* .modal-close {
+    float: right;
+    -webkit-appearance: none;
+    border: 0;
+    background: none;
+    color: #777;
+    text-decoration: underline;
+     transition effect transition: transform 0.3;
+     transition-timing-function: ease-in-out;
+} */
+
+/* add hover & scale magnify effects */
+/* .modal-close:hover,
+.modal-close:focus {
+    cursor: pointer;
+    transform: scale(1.7);
+} */
+
+/* .modal h1 {
+    margin-top: 0;
+}
+
+.modal p {
+    margin-bottom: 0;
+} */
+
+.button-class {
+    background-color: skyblue;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 3px;
+    min-width: 200px;
+    /* --webkit-transition-duration: 0.4s; */
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: skyblue;
+    color: purple;
+    border: 4px solid black;
+
+    /* transition effect */
+    transition: transform 0.1;
+    transition-timing-function: ease-in-out;
+}
+
+/* .button {
+    border: 2px blue solid;
+    height: 50px;
+    margin-bottom: 10px;
+
+} */
+
+/* add hover & scale magnify effects */
+.button-class:hover,
+.button-class:focus {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* .hidden {
+    display: none;
+}
+
+.selected {
+    border: 5px red solid;
+}
+
+.additional-information {
+    display: none;
+}
+
+.additional-information.is-visible {
+    display: block;
+} */
+
+/* adding grid */
+/* .pokemon-list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+
+} */
+
+/* ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+body {
+    background-color: salmon;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.6;
+    min-height: 100vh;
+    margin-top: 65px;
+    margin-bottom: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+
+
+/* trying to flex grow and short still in process of figuring this out
+ .pokemon-list-group {
+    grid-column: 3 / 3;
+    grid-row: 2 / 3; 
+    flex-basis: 25px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}  */
+
+
+/* .pokemon-list_text {
+    flex: 1 1 100px;
+} */
+
+
+
+/* @media all and (max-width: 500px) {
+    .pokemon-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media all and (min-width: 500x) and (max-width:750px) {
+    .pokemon-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media all and (max-width: 750px) {
+    .pokemon-list {
+        grid-gap: 10px;
+    }
+
+    .pokemon-list-group:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+} */
