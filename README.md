@@ -64,5 +64,4 @@ This code is a JavaScript module for managing a list of Pokémon fetched from th
    cd pokedex-app
 
 3. **Open index.html in your browser to run the application locally.**:
-   ```bash
    If using VSCode, you can just Run Live Server or Live Preview to view in your Local Host
